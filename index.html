@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한찬희</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Portfolio by 한찬희</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">홈</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">자기소개</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">스킬</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">포트폴리오</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">학력/자격증</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">연락처</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 메인 섹션 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="img-div">
+                    <img src="IMAGE/개발자 아이콘3.png" alt="" style="width: 15rem;">
+                </div>
+                <h1 class="hero-title">
+                    안녕하세요!
+                </h1>
+                <h1 class="hero-title2">
+                    끊임없이 배우고 성장하는 개발자 <span class="title-coment">한찬희</span> 입니다.
+                </h1>
+                <p class="hero-subtitle" style="width: 72rem;">
+                    Spring 기반 웹 개발에 대한 깊은 관심을 가지고 있으며, 최근에는 AI 기술에도 도전하고 있습니다.<br>
+                    기술은 끊임없이 변화하므로, 항상 새로운 것을 배우고 성장하는 데 집중하고 있습니다.<br>
+                    문제를 해결하고 더 나은 코드를 작성하기 위해 지속적으로 학습하며, 발전하는 개발자가 되기 위해 노력하고 있습니다.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">포트폴리오 보기</a>
+                    <!-- <a href="#contact" class="btn btn-secondary">연락하기</a> -->
+                </div>
+            </div>
+            <!-- <div class="hero-image">
+                <div class="code-animation">
+                    <div class="code-line">class BackendDeveloper {</div>
+                    <div class="code-line">  constructor() {</div>
+                    <div class="code-line">    this.skills = ['Java', 'Spring', 'MySQL'];</div>
+                    <div class="code-line">    this.passion = '코딩';</div>
+                    <div class="code-line">  }</div>
+                    <div class="code-line">}</div>
+                </div>
+            </div> -->
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- 자기소개 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">자기소개</h2>
+            <div class="about-content">
+                                 <div class="about-text">
+                     <h3>안녕하세요! 백엔드 개발자 한찬희입니다</h3>
+                     <p>
+                        처음에는 다른 분야에서 활동했지만 IT 개발에 대한 열정으로 새로운 길을 선택하게 되었습니다.<br>
+                        인재개발원에서 Cloud 연계 웹 개발자 과정을 수료하며 백엔드와 프론트엔드 전반의 기술을 학습하고 프로젝트 경험을 쌓았습니다.
+                     </p>
+                     <p>
+                         팀 리더 경험을 통해 팀워크와 협업의 중요성을 깊이 이해하고 있으며, 
+                         Junit, Spring Batch, AWS 등 최신 기술을 독학으로 학습하여 끊임없이 성장하는 개발자가 되기 위해 노력하고 있습니다.
+                     </p>
+                     <div class="about-stats">
+                         <div class="stat-item">
+                             <div class="stat-number">26</div>
+                             <div class="stat-label">세</div>
+                         </div>
+                         <div class="stat-item">
+                             <div class="stat-number">9</div>
+                             <div class="stat-label">개월 경력</div>
+                         </div>
+                         <div class="stat-item">
+                             <div class="stat-number">3</div>
+                             <div class="stat-label">개 자격증</div>
+                         </div>
+                     </div>
+                 </div>
+                <div class="about-image">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="IMAGE/한찬희 증명사진.jpg" alt="" style="width: 13rem;">
+                        </div>
+                                                 <div class="profile-info">
+                             <h4>한찬희</h4>
+                             <p>Java • Spring • AWS</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스킬 섹션 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">기술 스킬</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>백엔드 기술</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="skill-name">Java</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="skill-name">Spring</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="skill-name">OracleDB</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="skill-name">AWS</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>개발 도구</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <div class="skill-name">Git</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <div class="skill-name">Docker</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="skill-name">AWS</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="skill-name">Linux</div>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 포트폴리오 섹션 -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">포트폴리오</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <a href="https://www.notion.so/AIMAE-25e7f89ae91480dea9eafbecc5463824?source=copy_link" target="_blank" rel="noopener" class="portfolio-image-link">
+                                <img src="IMAGE/AIMAE.png" alt="AIMAE" style="width: 435px; height: 218px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>AIMAE 프로젝트</h3>
+                        <p style="font-weight: bold;">역할 및 담당</p>
+                        <p>
+                            팀장 · PM · 기획 · UI/UX · 프론트엔드 · 백엔드 지원 · 영상 제작 · 발표<br>
+                            회원·장바구니 기능, 결제 연동, 비밀번호 암호화, DB 설계/구축, 시스템 통합</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring</span>
+                            <span class="tag">OracleDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <a href="https://www.notion.so/POPPYRED-1cd7f89ae914806fab1dd52aefa54826?source=copy_link" target="_blank" rel="noopener" class="portfolio-image-link">
+                                <img src="IMAGE/poppyred.png" alt="POPPYRED" style="width: 408px; height: 218px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>POPPYRED 프로젝트</h3>
+                            <p style="font-weight: bold;">역할 및 담당</p>
+                            <p>팀원 - 프론트 / 백엔드<br>
+                            회원가입 / 게시판 기능 담당</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring</span>
+                            <span class="tag">JUnit</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>タベタビ 프로젝트</h3>
+                        <p>대용량 데이터 처리 및 배치 작업을 위한 Spring Batch 시스템 개발</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Batch</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학력 및 자격증 섹션 -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">학력 및 자격증</h2>
+            <div class="education-groups">
+                <div class="education-group">
+                    <h3 class="education-group-title">학력</h3>
+                    <div class="education-content">
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="education-details">
+                                <h4>숭의과학기술고등학교</h4>
+                                <p>2017년 졸업</p>
+                                <p>고등학교</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-group">
+                    <h3 class="education-group-title">자격증</h3>
+                    <div class="education-content">
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="education-details">
+                                <h4>정보처리산업기사</h4>
+                                <p>2024년 7월 취득</p>
+                                <p>한국산업인력공단</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="education-details">
+                                <h4>2종보통운전면허</h4>
+                                <p>2019년 2월 취득</p>
+                                <p>경찰청(운전면허시험관리단)</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div class="education-details">
+                                <h4>제과기능사</h4>
+                                <p>2017년 6월 취득</p>
+                                <p>한국산업인력공단</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>이메일</h4>
+                            <p>mh981219@naver.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>연락처</h4>
+                            <p>010-4002-1307</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>주소</h4>
+                            <p>광주 북구 용봉동</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="이름" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="메시지" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 한찬희 포트폴리오. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
