@@ -29,36 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 스킬 바 애니메이션
-    const skillBars = document.querySelectorAll('.skill-bar');
-    
-    const animateSkillBars = () => {
-        skillBars.forEach(bar => {
-            const level = bar.getAttribute('data-level');
-            bar.style.width = level + '%';
-        });
-    };
-    
-    // 스크롤 시 스킬 바 애니메이션 실행
-    const skillsSection = document.querySelector('#skills');
-    
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkillBars();
-                skillsObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    if (skillsSection) {
-        skillsObserver.observe(skillsSection);
-    }
+
     
     // 부드러운 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
