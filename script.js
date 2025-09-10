@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 스크롤 시 요소들 페이드인 애니메이션
-    const fadeElements = document.querySelectorAll('.portfolio-item, .skill-item, .contact-item, .education-item');
+    const fadeElements = document.querySelectorAll('.portfolio-item, .skill-item, .contact-item, .education-item, .award-item, .career-item');
     
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -273,6 +273,142 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     window.addEventListener('scroll', updateOnScroll);
+    
+    // 스킬 캐러셀 기능
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.skills-slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+    
+    // 슬라이드 변경 함수
+    function showSlide(n) {
+        // 모든 슬라이드 숨기기
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // 현재 슬라이드 인덱스 계산
+        currentSlide = (n + totalSlides) % totalSlides;
+        
+        // 현재 슬라이드 표시
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+    
+    // 다음/이전 슬라이드 함수
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+    
+    // 특정 슬라이드로 이동
+    function goToSlide(n) {
+        showSlide(n - 1);
+    }
+    
+    // 자동 슬라이드 (선택사항)
+    let autoSlideInterval;
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 5000); // 5초마다 자동 슬라이드
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    // 캐러셀 컨테이너에 마우스 올렸을 때 자동 슬라이드 정지
+    const carouselContainer = document.querySelector('.skills-carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+        carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // 터치 스와이프 지원
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleCarouselSwipe();
+        });
+    }
+    
+    function handleCarouselSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // 왼쪽으로 스와이프 - 다음 슬라이드
+                changeSlide(1);
+            } else {
+                // 오른쪽으로 스와이프 - 이전 슬라이드
+                changeSlide(-1);
+            }
+        }
+    }
+    
+    // 키보드 네비게이션 지원
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            changeSlide(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeSlide(1);
+        }
+    });
+    
+    // 초기 슬라이드 표시 및 자동 슬라이드 시작
+    if (slides.length > 0) {
+        showSlide(0);
+        startAutoSlide();
+    }
+    
+    // 전역 함수로 등록 (HTML에서 onclick으로 사용)
+    window.changeSlide = changeSlide;
+    window.currentSlide = goToSlide;
+    
+    // 수상 사진 모달 기능
+    function openModal(imageSrc, title) {
+        const modal = document.getElementById('awardModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        
+        modalImage.src = imageSrc;
+        modalTitle.textContent = title;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // 스크롤 방지
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('awardModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // 스크롤 복원
+    }
+    
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+        const modal = document.getElementById('awardModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+    
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+    
+    // 전역 함수로 등록
+    window.openModal = openModal;
+    window.closeModal = closeModal;
     
     console.log('포트폴리오 웹사이트가 성공적으로 로드되었습니다! 🚀');
 });

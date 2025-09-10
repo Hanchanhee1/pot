@@ -415,56 +415,142 @@ section {
 }
 
 /* 스킬 섹션 */
-.skills-content {
-    display: grid;
-    gap: 3rem;
+.skills-carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.skills-category h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-    text-align: center;
+.skills-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
-.skills-grid {
+.skills-slide {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skills-slide.active {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .skill-item {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .skill-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.8rem;
 }
 
 .skill-icon img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
 }
 
 .skill-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #333;
+    margin: 0;
+}
+
+/* 캐러셀 네비게이션 */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.carousel-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.carousel-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.carousel-btn:active {
+    transform: translateY(-1px);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #667eea;
+    transform: scale(1.1);
 }
 
 /* 포트폴리오 섹션 */
@@ -655,6 +741,219 @@ section {
     color: #333;
 }
 
+/* 수상 및 경력 섹션 */
+.awards {
+    background: #f8f9fa;
+}
+
+.awards-content {
+    display: grid;
+    gap: 4rem;
+}
+
+.awards-group {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.awards-group-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.awards-group-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+/* 수상 내역 타임라인 */
+.awards-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.awards-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.award-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.award-item:last-child {
+    margin-bottom: 0;
+}
+
+.award-icon {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    z-index: 2;
+}
+
+.award-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.award-details h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.award-date {
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.award-organization {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.award-description {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.award-image {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.award-photo {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.award-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 경력 사항 타임라인 */
+.career-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.career-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.career-item:last-child {
+    margin-bottom: 0;
+}
+
+.career-icon {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    z-index: 2;
+}
+
+.career-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.career-details h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.career-period {
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.career-organization {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.career-description {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* 연락처 섹션 */
 .contact-content {
     display: grid;
@@ -749,6 +1048,64 @@ section {
     padding: 2rem 0;
 }
 
+/* 수상 사진 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #667eea;
+}
+
+.modal-caption {
+    margin-top: 20px;
+    color: white;
+}
+
+.modal-caption h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .hamburger {
@@ -805,12 +1162,121 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .skills-slide {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .skill-item {
+        min-height: 100px;
+        padding: 1rem;
+    }
+    
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 0.5rem;
+    }
+    
+    .skill-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .skill-name {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-nav {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
     }
     
     .education-content {
         grid-template-columns: 1fr;
+    }
+    
+    .awards-content {
+        gap: 2rem;
+    }
+    
+    .awards-group {
+        padding: 2rem;
+    }
+    
+    .awards-group-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .awards-timeline,
+    .career-timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .awards-timeline::before,
+    .career-timeline::before {
+        left: 15px;
+    }
+    
+    .award-item,
+    .career-item {
+        padding-left: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .award-icon,
+    .career-icon {
+        left: -2rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .award-icon i,
+    .career-icon i {
+        font-size: 1rem;
+    }
+    
+    .award-details h4,
+    .career-details h4 {
+        font-size: 1.1rem;
+    }
+    
+    .award-description,
+    .career-description {
+        font-size: 0.9rem;
+    }
+    
+    .award-photo {
+        max-height: 200px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    .modal-caption h3 {
+        font-size: 1.2rem;
     }
     
     .hero-buttons {
