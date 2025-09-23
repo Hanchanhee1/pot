@@ -164,6 +164,12 @@ body {
 .img-div {
     margin-bottom: -8rem;
     margin-left: 46.5rem;
+    text-align: center;
+}
+
+.hero-image {
+    width: 15rem;
+    height: auto;
 }
 
 .title-coment {
@@ -1137,6 +1143,11 @@ section {
 
     .img-div {
         margin: 0 auto -2rem;
+        margin-left: auto;
+        width: 10rem;
+    }
+    
+    .hero-image {
         width: 10rem;
     }
     
@@ -1296,6 +1307,16 @@ section {
         font-size: 2rem;
     }
     
+    .hero-title2 {
+        font-size: 2rem;
+        width: 100%;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        width: 100% !important;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
@@ -1306,6 +1327,51 @@ section {
     
     .hero-container {
         padding: 0 15px;
+    }
+    
+    .img-div {
+        margin: 0 auto -2rem;
+        width: 8rem;
+    }
+    
+    .hero-image {
+        width: 8rem;
+    }
+    
+    .hero::before {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* 매우 작은 화면 (320px 이하) */
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .img-div {
+        width: 6rem;
+    }
+    
+    .hero-image {
+        width: 6rem;
+    }
+    
+    .hero-container {
+        padding: 0 10px;
+    }
+    
+    .container {
+        padding: 0 10px;
     }
 }
 
