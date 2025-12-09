@@ -1,0 +1,195 @@
+/* 추가 스타일 - styles.css 끝에 추가할 내용 */
+
+/* Section subtitle */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: -1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* About section improvements */
+.about-highlight-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    margin: 1.5rem 0;
+}
+
+.competency-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.8rem;
+}
+
+.competency-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.competency-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Profile card improvements */
+.profile-role-main {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.profile-specialties {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.specialty-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.profile-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.profile-link-item {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.profile-link-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Project card improvements */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.project-badge {
+    background: #e9ecef;
+    color: #666;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-badge.award {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+}
+
+.project-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.project-section {
+    margin-bottom: 1.5rem;
+}
+
+.project-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.problem {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.solution {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.tech-implementation {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-implementation li {
+    padding: 0.4rem 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.tech-implementation strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Contact form message */
+.contact-form-message {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.contact-form-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-form-message p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Responsive updates */
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .competency-list li {
+        font-size: 0.95rem;
+    }
+    
+    .profile-specialties {
+        gap: 0.4rem;
+    }
+    
+    .specialty-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}

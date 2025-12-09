@@ -73,17 +73,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const animateStats = () => {
         statNumbers.forEach(stat => {
-            const target = parseInt(stat.textContent);
+            const originalText = stat.textContent;
+            const target = parseInt(originalText);
+            const suffix = originalText.replace(target, ''); // "건", "회" 등 추출
             const increment = target / 50;
             let current = 0;
             
             const updateStat = () => {
                 if (current < target) {
                     current += increment;
-                    stat.textContent = Math.ceil(current) + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                    stat.innerHTML = Math.ceil(current) + '<span class="stat-unit">' + suffix + '</span>';
                     requestAnimationFrame(updateStat);
                 } else {
-                    stat.textContent = target + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                    stat.innerHTML = target + '<span class="stat-unit">' + suffix + '</span>';
                 }
             };
             

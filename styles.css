@@ -151,7 +151,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    width: 76rem;
+    max-width: 100%;
     position: relative;
 }
 
@@ -168,8 +168,9 @@ body {
 
 .img-div {
     margin-bottom: -8rem;
-    margin-left: 46.5rem;
+    margin-left: 46.3rem;
     text-align: center;
+    max-width: 15rem;
 }
 
 .hero-image {
@@ -201,6 +202,7 @@ body {
     margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.8;
+    max-width: 100%;
 }
 
 .hero-buttons {
@@ -360,8 +362,8 @@ section {
 }
 
 .stat-item {
-    gap: 0.4rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -370,6 +372,7 @@ section {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    gap: 0.5rem;
 }
 
 .stat-item:hover {
@@ -380,12 +383,27 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     color: #667eea;
-    margin-bottom: 0.5rem;
 }
 
 .stat-label {
     color: #666;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.stat-label2 {
+    font-size: 1.2rem;
     font-weight: 500;
+    color: #666;
+    margin-left: 0.2rem;
+}
+
+.stat-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    margin-left: 0.3rem;
+    vertical-align: baseline;
 }
 
 .profile-card {
@@ -407,6 +425,8 @@ section {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
 }
 
 .profile-avatar i {
@@ -418,6 +438,7 @@ section {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #333;
+    padding-top: 1rem;
 }
 
 .profile-info p {
@@ -427,36 +448,30 @@ section {
 
 /* 프로필 역할 뱃지 */
 .profile-roles {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem 0.8rem;
+    display: block;
     margin-top: 0.5rem;
 }
 
-.role-badge {
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #fff;
-    background: #667eea;
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.25);
-    white-space: nowrap;
+.profile-roles p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #555;
 }
 
-.role-badge:nth-child(2) {
-    background: linear-gradient(135deg, #4babff 0%, #6a5acd 100%);
+/* 스킬 섹션 */
+.profile-specialties {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.role-badge:nth-child(3) {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-}
-
-.role-badge:nth-child(4) {
-    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+.profile-links {
+    padding-top: 1rem;
 }
 
 /* 스킬 섹션 */
@@ -624,7 +639,7 @@ section {
 .portfolio-image {
     position: relative;
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -695,8 +710,16 @@ section {
 
 .portfolio-content h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
     color: #333;
+    line-height: 1.6;
+}
+
+/* 프로젝트 부제목 강조 */
+.portfolio-content h3 .project-subtitle {
+    color: #667eea !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    display: inline-block;
 }
 
 .portfolio-content p {
@@ -922,30 +945,82 @@ section {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
+/* 타임라인 범례 */
+.timeline-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.legend-icon.education {
+    background: linear-gradient(135deg, #cdb4db 0%, #bde0fe 100%);
+}
+
+.legend-icon.career {
+    background: linear-gradient(135deg, #f5cac3 0%, #dda5b5 100%);
+}
+
+.legend-icon.certificate {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.legend-icon.award {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
 /* 경력 사항 타임라인 */
 .career-timeline {
     position: relative;
-    padding-left: 2rem;
+    padding-left: 3rem;
+    padding-top: 1.5rem;
 }
 
 .career-timeline::before {
     content: '';
     position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
+    left: 25px;
+    top: -15px;
+    bottom: 5rem;
     width: 3px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 2px;
 }
 
+/* 타임라인 시작 화살표 (위쪽) */
+.career-timeline::after {
+    content: '▲';
+    position: absolute;
+    left: 17px;
+    top: -25px;
+    font-size: 1.2rem;
+    color: #667eea;
+    z-index: 3;
+}
+
 .career-item {
     position: relative;
     margin-bottom: 3rem;
-    padding-left: 3rem;
+    padding-left: 3.5rem;
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
 }
 
 .career-item:last-child {
@@ -954,22 +1029,44 @@ section {
 
 .career-icon {
     position: absolute;
-    left: -2.5rem;
+    left: -46px;
     top: 0;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #cdb4db 0%, #bde0fe 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(189, 224, 254, 0.3);
     z-index: 2;
+}
+
+/* 자격증 아이콘 색상 */
+.career-icon.certificate {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    box-shadow: 0 5px 15px rgba(142, 197, 252, 0.3);
+}
+
+/* 경력 아이콘 색상 */
+.career-icon.career {
+    background: linear-gradient(135deg, #f5cac3 0%, #dda5b5 100%);
+    box-shadow: 0 5px 15px rgba(245, 202, 195, 0.3);
+}
+
+/* 수상 아이콘 색상 */
+.career-icon.award {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    box-shadow: 0 5px 15px rgba(166, 193, 238, 0.4);
 }
 
 .career-icon i {
     font-size: 1.2rem;
     color: white;
+}
+
+.career-details {
+    width: 100%;
 }
 
 .career-details h4 {
@@ -999,7 +1096,121 @@ section {
     font-size: 0.95rem;
 }
 
-/* 연락처 섹션 */
+/* 자격증 섹션 */
+.certificates {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.certificate-card.highlight {
+    border: 2px solid #667eea;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+}
+
+.certificate-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.certificate-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.certificate-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.certificate-subtitle {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-date {
+    font-size: 1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-org {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+.certificate-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: #e6f2ff;
+    color: #667eea;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.certificate-badge.new {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1179,19 +1390,17 @@ section {
         text-align: center;
         gap: 2rem;
     }
-
-    .img-div {
-        margin: 0 auto -2rem;
-        margin-left: auto;
-        width: 10rem;
-    }
-    
-    .hero-image {
-        width: 10rem;
-    }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .hero-title2 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .about-content {
@@ -1284,25 +1493,30 @@ section {
     
     .awards-timeline,
     .career-timeline {
-        padding-left: 1.5rem;
+        padding-left: 2.5rem;
     }
     
     .awards-timeline::before,
     .career-timeline::before {
-        left: 15px;
+        left: 20px;
     }
     
     .award-item,
     .career-item {
-        padding-left: 2.5rem;
+        padding-left: 3rem;
         margin-bottom: 2rem;
     }
     
     .award-icon,
     .career-icon {
-        left: -2rem;
+        left: -42px;
         width: 40px;
         height: 40px;
+    }
+    
+    .career-details,
+    .award-details {
+        width: 100%;
     }
     
     .award-icon i,
@@ -1459,5 +1673,232 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Section subtitle */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: -1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* About section improvements */
+.about-highlight-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    margin: 1.5rem 0;
+}
+
+.competency-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.8rem;
+}
+
+.competency-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.competency-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Profile card improvements */
+.profile-role-main {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.profile-specialties {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.specialty-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.profile-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.profile-link-item {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.profile-link-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Portfolio item positioning */
+.portfolio-item {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: visible;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Portfolio badge on item */
+.portfolio-badge {
+    position: absolute;
+    top: -1rem;
+    left: 0rem;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* 최우수상 - 골드 */
+.portfolio-badge.award-gold {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
+}
+
+/* 우수상 - 실버 */
+.portfolio-badge.award-silver {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.6);
+}
+
+/* 장려상 - 브론즈 */
+.portfolio-badge.award-bronze {
+    background: linear-gradient(135deg, #cd7f32 0%, #e6a567 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.6);
+}
+
+/* Portfolio placeholder */
+.portfolio-placeholder {
+    position: relative;
+}
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.project-header h3 {
+    flex: 1;
+    margin: 0;
+}
+
+.project-badge {
+    background: #e9ecef;
+    color: #666;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-badge.award {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+}
+
+.project-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.project-section {
+    margin-bottom: 1.5rem;
+}
+
+.project-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.problem {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.solution {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.tech-implementation {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-implementation li {
+    padding: 0.4rem 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.tech-implementation strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Contact form message */
+.contact-form-message {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.contact-form-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-form-message p {
+    color: #666;
+    margin-bottom: 1rem;
 }
 
