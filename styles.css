@@ -126,16 +126,14 @@ body {
 
 /* 메인 히어로 섹션 */
 .hero {
-    min-height: 100vh; /* fallback */
-    min-height: 100svh; /* mobile safe viewport */
-    min-height: 100dvh; /* dynamic viewport for foldables/tablets */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #dbe4ff 0%, #597efc 100%);
     color: white;
     position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: hidden;
+    padding: 100px 0 80px;
 }
 
 .hero::before {
@@ -1446,11 +1444,16 @@ section {
         left: 0;
     }
     
+    .hero {
+        padding: 80px 0 60px;
+        min-height: auto;
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
     
     .hero-title {
@@ -1467,10 +1470,12 @@ section {
     
     .hero-subtitle {
         font-size: 1rem;
+        width: 100% !important;
     }
     
     .img-div {
-        margin: 0 auto 1rem;
+        position: static;
+        margin: 0 auto 1.5rem;
         max-width: 12rem;
     }
     
@@ -1686,8 +1691,8 @@ section {
 
 @media (max-width: 480px) {
     .hero {
-        min-height: 100vh;
-        padding: 80px 0 60px;
+        min-height: auto;
+        padding: 70px 0 50px;
     }
     
     .hero-container {
@@ -1715,9 +1720,11 @@ section {
     
     .hero-subtitle {
         font-size: 0.95rem;
+        width: 100% !important;
     }
     
     .img-div {
+        position: static;
         max-width: 10rem;
         margin: 0 auto 1.5rem;
     }
@@ -1964,6 +1971,10 @@ section {
 
 /* 매우 작은 화면 (320px 이하) */
 @media (max-width: 320px) {
+    .hero {
+        padding: 60px 0 40px;
+    }
+    
     .hero-title {
         font-size: 1.6rem;
     }
@@ -1978,9 +1989,11 @@ section {
     
     .hero-subtitle {
         font-size: 0.9rem;
+        width: 100% !important;
     }
     
     .img-div {
+        position: static;
         max-width: 8rem;
     }
     
