@@ -211,7 +211,7 @@ html[lang="ja"] .hero-title2 {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: #4babff;
-    background: linear-gradient(5deg, #000000, #5c33f6);
+    background: linear-gradient(189deg, #000000, #9b9b9b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1424,6 +1424,12 @@ section {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+    
+    .lang-switch {
+        display: flex;
+        margin-right: 1rem;
+        margin-left: auto;
     }
     
     .nav-menu {
